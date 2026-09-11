@@ -1,0 +1,40 @@
+# DATA 3402 — Python for Data Science 2 · Fall 2026
+#
+# Install these into a virtual environment, never system-wide. On current
+# Ubuntu (including WSL), `sudo pip install` is blocked on purpose and will
+# fail with "externally-managed-environment" — that is not a bug, it is the
+# OS protecting its own Python. Do this instead:
+#
+#     python3 -m venv .venv
+#     source .venv/bin/activate
+#     pip install -r requirements.txt
+#
+# The `(.venv)` in your prompt means it is active. You need to run the
+# `source` line again in every new terminal.
+#
+# Versions below are floors, not pins — pip will fetch something current.
+
+
+# --- Core: needed from Lab 1 onward ------------------------------------
+jupyterlab>=4.0
+notebook>=7.0
+numpy>=1.26
+matplotlib>=3.8
+pandas>=2.1,<3           # pinned below 3.0: it is a breaking release and the
+                         # course notebooks are written against 2.x
+scipy>=1.11
+
+# --- Added as the semester goes on -------------------------------------
+scikit-learn>=1.4        # machine learning; Lab 8 classification
+seaborn>=0.13            # exploratory data analysis plots
+tabulate>=0.9            # readable tables in notebooks
+h5py>=3.10               # HDF5 data files; Lab 7
+PyYAML>=6.0              # configuration files
+
+# --- Optional / installed later, together ------------------------------
+# These are large, slow, and fussy about your platform. Do NOT install them
+# on setup day. We install them in the session where they are first needed.
+#
+# tensorflow             # deep learning; Lab 9 (optional)
+# opencv-python          # image data in the later lectures
+# kaggle                 # downloading Kaggle competition datasets
